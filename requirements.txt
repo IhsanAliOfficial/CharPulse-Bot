@@ -1,0 +1,5 @@
+solders
+solana
+python-dotenv
+requests
+base58
