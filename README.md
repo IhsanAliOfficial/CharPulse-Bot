@@ -1,30 +1,38 @@
+🪙 CharPulse-Bot — Automated CharCoin Swap Keeper
 
-# CharCoin Keep-Alive Bot
+A fully automated Solana-based micro-swap bot that keeps your CharCoin wallet alive and active — quietly, efficiently, and reliably.
 
-This bot keeps **CharCoin (CHAR)** visible on [Dexscreener](https://dexscreener.com) by ensuring at least one trade happens every 24 hours.  
-If no activity is detected within 24h, the bot automatically performs a **tiny buy ($0.10–$1.00)** via Jupiter on Solana.  
+🚀 Overview
 
+CharPulse-Bot is a lightweight yet production-ready Solana micro-trading bot built to automatically perform periodic USDT → CHAR swaps using the Jupiter Lite API.
+It runs on a schedule (e.g. every 6 hours) to ensure your CharCoin wallet remains active, liquid, and on-chain, even during idle periods.
 
-# 🚀 CharCoin Keep-Alive Bot
+⚙️ Core Features
 
-An advanced automated trading bot built for the **Solana blockchain**, designed to perform **micro-buy transactions** from **USDT → CharCoin** at scheduled intervals.
+💱 Automated Micro-Buys — Executes tiny swaps (e.g. $0.01–$0.10) to maintain wallet activity.
 
-### ✨ Features
-- 🧠 **Auto Scheduler** – Buys CHAR every few hours automatically.  
-- 🧪 **Dry-Run Mode** – Test everything safely without using a real wallet.  
-- 🔁 **Smart Retry System** – Falls back to secondary buy amount if swap fails.  
-- 🌐 **Jupiter Aggregator API** – Real quotes & swap routing.  
-- ⚙️ **Environment Driven** – Configure RPCs, mints, and wallet in `.env`.  
-- 🧾 **Detailed Logging** – All events stored in logs for easy debugging.
-- Checks Dexscreener API for CHAR trades in the past 24h  
-- If no trades → executes a micro-buy using your Solana wallet  
-- Configurable buy amount, slippage, and check interval  
-- Uses **Dexscreener free API** + **Jupiter swap API** (no extra cost)  
-- Prevents graphs & data in the DAPP from collapsing 
----
+🔒 Real Wallet Integration — Uses Solana’s solders library for secure signing and transaction dispatch.
 
+🌐 Jupiter Aggregator API — Fetches best swap routes via Jupiter Lite (/quote & /swap endpoints).
 
+🔔 Webhook Notifications — Sends trade results and alerts directly to your Discord or Telegram.
 
+🧪 Dry-Run Mode — Safe simulation for testing without using real funds.
 
+⏰ Dynamic Scheduling — Randomized sleep intervals prevent predictable transaction patterns.
 
+🧰 Detailed Logging — Local logs/bot.log plus console logs with emoji-rich real-time status.
 
+🔧 Tech Stack
+
+Language: Python 3.10+
+
+Blockchain: Solana (via solders + solana.rpc.api)
+
+APIs: Jupiter Lite Swap & Quote endpoints
+
+Env Handling: python-dotenv
+
+Notifications: Webhooks (Discord/Telegram compatible)
+
+Logging: File + Console with emoji-friendly output
